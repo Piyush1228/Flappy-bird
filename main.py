@@ -148,7 +148,7 @@ def mainGame():
         FPSCLOCK.tick(FPS)
 
 def isCollide(playerx, playery, upperPipes, lowerPipes):
-
+    
     if playery> GROUNDY - 30  or playery<0:
         GAME_SOUNDS['die'].play()
         return True
@@ -163,7 +163,7 @@ def isCollide(playerx, playery, upperPipes, lowerPipes):
         if (playery + GAME_SPRITES['player'].get_height() > pipe['y']) and abs(playerx - pipe['x']) < GAME_SPRITES['pipe'][0].get_width():
             GAME_SOUNDS['hit'].play()
             return True
-
+    
     return False
 
 def getRandomPipe():
