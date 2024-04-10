@@ -4,7 +4,7 @@ import pygame
 from pygame.locals import * # Basic pygame imports
 
 # Global Variables for the game
-FPS = 32
+FPS = 40
 SCREENWIDTH = 289
 SCREENHEIGHT = 511
 SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
@@ -73,7 +73,7 @@ def mainGame():
     playerMinVelY = -8
     playerAccY = 1
 
-    playerFlapAccv = -8 # velocity while flapping
+    playerFlapAccv = -10 # velocity while flapping
     playerFlapped = False # It is true only when the bird is flapping
 
 
@@ -149,7 +149,7 @@ def mainGame():
 
 def isCollide(playerx, playery, upperPipes, lowerPipes):
     
-    if playery> GROUNDY - 30  or playery<0:
+    if playery> GROUNDY - 36 or playery<0:
         GAME_SOUNDS['die'].play()
         return True
     
@@ -160,7 +160,7 @@ def isCollide(playerx, playery, upperPipes, lowerPipes):
             return True
 
     for pipe in lowerPipes:
-        if (playery + GAME_SPRITES['player'].get_height() > pipe['y']) and abs(playerx - pipe['x']) < GAME_SPRITES['pipe'][0].get_width():
+        if (playery + GAME_SPRITES['player'].get_height() > pipe['y']) and abs(playerx - pipe['x']) < GAME_SPRITES['pipe'][1].get_width():
             GAME_SOUNDS['hit'].play()
             return True
     
@@ -180,11 +180,6 @@ def getRandomPipe():
         {'x': pipeX, 'y': y2} #lower Pipe
     ]
     return pipe
-
-
-
-
-
 
 if __name__ == "__main__":
     # This will be the main point from where our game will start
