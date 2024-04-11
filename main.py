@@ -60,7 +60,7 @@ def mainGame():
         {'x': SCREENWIDTH+200, 'y':newPipe1[0]['y']},
         {'x': SCREENWIDTH+200+(SCREENWIDTH/2), 'y':newPipe2[0]['y']},
     ]
-    # my List of lower pipes
+    # List of lower pipes
     lowerPipes = [
         {'x': SCREENWIDTH+200, 'y':newPipe1[1]['y']},
         {'x': SCREENWIDTH+200+(SCREENWIDTH/2), 'y':newPipe2[1]['y']},
@@ -127,7 +127,7 @@ def mainGame():
             upperPipes.pop(0)
             lowerPipes.pop(0)
         
-        # Lets blit our sprites now
+        # Lets blit sprites
         SCREEN.blit(GAME_SPRITES['background'], (0, 0))
         for upperPipe, lowerPipe in zip(upperPipes, lowerPipes):
             SCREEN.blit(GAME_SPRITES['pipe'][0], (upperPipe['x'], upperPipe['y']))
