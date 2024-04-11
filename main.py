@@ -33,7 +33,8 @@ def welcomeScreen():
                 sys.exit()
                 
             # If the user presses space or up key, start the game for them
-            elif event.type==KEYDOWN and (event.key==K_SPACE or event.key == K_UP):
+            elif event.type==KEYDOWN and (event.key==K_SPACE or event.key == K_UP or event.key == K_RIGHT):
+                GAME_SOUNDS['starting'].play(0)
                 return
                 
             else:
@@ -43,7 +44,6 @@ def welcomeScreen():
                 SCREEN.blit(GAME_SPRITES['base'], (basex, GROUNDY))    
                 pygame.display.update()
                 FPSCLOCK.tick(FPS)
-                GAME_SOUNDS['starting'].play()
 
 def mainGame():
     score = 0
