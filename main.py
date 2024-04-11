@@ -4,8 +4,8 @@ import pygame
 from pygame.locals import * # Basic pygame imports
 
 # Global Variables for the game
-FPS = 40
-SCREENWIDTH = 289
+FPS = 42
+SCREENWIDTH = 288
 SCREENHEIGHT = 511
 SCREEN = pygame.display.set_mode((SCREENWIDTH, SCREENHEIGHT))
 GROUNDY = SCREENHEIGHT * 0.8
@@ -60,7 +60,7 @@ def mainGame():
         {'x': SCREENWIDTH+200, 'y':newPipe1[0]['y']},
         {'x': SCREENWIDTH+200+(SCREENWIDTH/2), 'y':newPipe2[0]['y']},
     ]
-    # my List of lower pipes
+    # List of lower pipes
     lowerPipes = [
         {'x': SCREENWIDTH+200, 'y':newPipe1[1]['y']},
         {'x': SCREENWIDTH+200+(SCREENWIDTH/2), 'y':newPipe2[1]['y']},
@@ -68,9 +68,8 @@ def mainGame():
 
     pipeVelX = -4
 
-    playerVelY = -9
+    playerVelY = -10
     playerMaxVelY = 10
-    playerMinVelY = -8
     playerAccY = 1
 
     playerFlapAccv = -10 # velocity while flapping
@@ -127,7 +126,7 @@ def mainGame():
             upperPipes.pop(0)
             lowerPipes.pop(0)
         
-        # Lets blit our sprites now
+        # Lets blit sprites
         SCREEN.blit(GAME_SPRITES['background'], (0, 0))
         for upperPipe, lowerPipe in zip(upperPipes, lowerPipes):
             SCREEN.blit(GAME_SPRITES['pipe'][0], (upperPipe['x'], upperPipe['y']))
