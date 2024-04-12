@@ -69,7 +69,7 @@ def mainGame():
     pipeVelX = -4
 
     playerVelY = -10
-    playerMaxVelY = 10
+    playerMaxVelY = 8
     playerAccY = 1
 
     playerFlapAccv = -10 # velocity while flapping
